@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HealthTrack — Patient Wellness Dashboard</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="app">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" aria-label="Main navigation">
+            <div class="brand">
+                <div class="logo" aria-hidden="true">HT</div>
+                <div class="brand-text">
+                    <h1>HealthTrack</h1>
+                    <p class="muted">Patient Dashboard</p>
+                </div>
+            </div>
+
+            <nav class="nav" role="navigation" aria-label="Primary">
+                <ul>
+                    <li class="active"><a href="#"><i class="fa-solid fa-chart-line" aria-hidden="true"></i><span>Overview</span></a></li>
+                    <li><a href="#"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>Appointments</span></a></li>
+                    <li><a href="#"><i class="fa-solid fa-pills" aria-hidden="true"></i><span>Prescriptions</span></a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-medical" aria-hidden="true"></i><span>Reports</span></a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear" aria-hidden="true"></i><span>Settings</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-logout" aria-label="Log out"><i class="fa-solid fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main" id="maincontent">
+            <!-- HEADER -->
+            <header class="header" role="banner">
+                <div class="search">
+                    <input type="search" placeholder="Search patient, appointment..." aria-label="Search" />
+                </div>
+                <div class="header-right">
+                    <button class="icon-btn" aria-label="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="badge" aria-hidden="true">3</span>
+                    </button>
+
+                    <div class="profile" title="Patient profile">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.PzaDVWFb0SjzKUWFPhsyegAAAA?pid=Api&P=0&h=220" alt="Patient avatar" />
+                        <div class="profile-info">
+                            <div class="name">Unknow</div>
+                            <div class="muted small">Age 32 • Male</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTENT GRID -->
+            <section class="content" aria-labelledby="overview-heading">
+                <div class="content-header">
+                    <h2 id="overview-heading">Overview</h2>
+                    <p class="muted">Patient health at a glance</p>
+                </div>
+
+                <!-- Health cards -->
+                <div class="cards">
+                    <article class="card heart" aria-labelledby="hr-label">
+                        <div class="card-icon"><i class="fa-solid fa-heart"></i></div>
+                        <div class="card-body">
+                            <div id="hr-label" class="card-title">Heart Rate</div>
+                            <div class="card-value">78 <span class="muted">bpm</span></div>
+                            <div class="card-meta muted">Last checked: Sep 11, 2025</div>
+                        </div>
+                    </article>
+
+                    <article class="card bp" aria-labelledby="bp-label">
+                        <div class="card-icon"><i class="fa-solid fa-tachometer-alt"></i></div>
+                        <div class="card-body">
+                            <div id="bp-label" class="card-title">Blood Pressure</div>
+                            <div class="card-value">120/78 <span class="muted">mmHg</span></div>
+                            <div class="card-meta muted">Measured: Sep 11, 2025</div>
+                        </div>
+                    </article>
+
+                    <article class="card ox" aria-labelledby="ox-label">
+                        <div class="card-icon"><i class="fa-solid fa-lungs"></i></div>
+                        <div class="card-body">
+                            <div id="ox-label" class="card-title">Oxygen</div>
+                            <div class="card-value">98 <span class="muted">%</span></div>
+                            <div class="card-meta muted">Pulse: 78 bpm</div>
+                        </div>
+                    </article>
+
+                    <article class="card bmi" aria-labelledby="bmi-label">
+                        <div class="card-icon"><i class="fa-solid fa-weight-scale"></i></div>
+                        <div class="card-body">
+                            <div id="bmi-label" class="card-title">BMI</div>
+                            <div class="card-value">24.2 <span class="muted">kg/m²</span></div>
+                            <div class="card-meta muted">Category: Normal</div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Two-column area: appointments and prescriptions -->
+                <div class="two-column">
+                    <!-- APPOINTMENTS -->
+                    <section class="panel" aria-labelledby="appointments-heading">
+                        <div class="panel-header">
+                            <h3 id="appointments-heading">Appointments</h3>
+                            <a class="link" href="#" aria-label="View all appointments">View all</a>
+                        </div>
+
+                        <div class="table-wrap" role="region" aria-label="Upcoming appointments">
+                            <table class="appointments" role="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Doctor</th>
+                                        <th scope="col">Department</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2025-09-15</td>
+                                        <td>Dr. S. Reddy</td>
+                                        <td>Cardiology</td>
+                                        <td><span class="pill upcoming">Upcoming</span></td>
+                                        <td><button class="btn-sm">Reschedule</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2025-08-30</td>
+                                        <td>Dr. A. Kumar</td>
+                                        <td>General</td>
+                                        <td><span class="pill past">Completed</span></td>
+                                        <td><button class="btn-sm">Details</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- PRESCRIPTIONS -->
+                    <aside class="panel" aria-labelledby="prescriptions-heading">
+                        <div class="panel-header">
+                            <h3 id="prescriptions-heading">Prescriptions</h3>
+                            <a class="link" href="#" aria-label="Manage prescriptions">Manage</a>
+                        </div>
+
+                        <ul class="prescription-list">
+                            <li>
+                                <div class="rx-left">
+                                    <strong>Aspirin</strong>
+                                    <div class="muted small">75mg — Dr. S. Reddy</div>
+                                </div>
+                                <div class="rx-right">
+                                    <div class="muted small">7 days</div>
+                                    <button class="btn-sm">Refill</button>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="rx-left">
+                                    <strong>Atorvastatin</strong>
+                                    <div class="muted small">10mg — Dr. S. Reddy</div>
+                                </div>
+                                <div class="rx-right">
+                                    <div class="muted small">30 days</div>
+                                    <button class="btn-sm">Refill</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+
+                <!-- PROFILE SECTION -->
+                <section class="panel profile-panel" aria-labelledby="profile-heading">
+                    <div class="panel-header">
+                        <h3 id="profile-heading">Patient Profile</h3>
+                        <div class="muted small">Doctor assigned: Dr. S. Reddy</div>
+                    </div>
+
+                    <div class="profile-grid">
+                        <div><strong>Name</strong>
+                            <div class="muted">Unknow</div>
+                        </div>
+                        <div><strong>Age</strong>
+                            <div class="muted">21</div>
+                        </div>
+                        <div><strong>Gender</strong>
+                            <div class="muted">Male</div>
+                        </div>
+                        <div><strong>Email</strong>
+                            <div class="muted">unknow@example.com</div>
+                        </div>
+                        <div><strong>Phone</strong>
+                            <div class="muted">+91 98XXXXXXXX</div>
+                        </div>
+                        <div><strong>Allergies</strong>
+                            <div class="muted">None</div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
